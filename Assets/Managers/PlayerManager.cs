@@ -37,8 +37,9 @@ public class PlayerManager : MonoBehaviour
         float currentSpeed = speedMovement * Input.GetAxis("Vertical");
         controller.SimpleMove(forward * currentSpeed); //SimpleMove locks player to the ground
 
-        // if(Input.GetKeyDown("space")){ //Fire Fireball if SPACE is pressed
-        //     AmmoManager.instance.Fire();
-        // }
+        if(Input.GetKeyDown("space") && GameManager.instance.getAmmoCount() > 0){ //Fire Fireball if SPACE is pressed
+            AmmoManager.instance.Fire();
+            GameManager.instance.subtractAmmo();
+        }
     }
 }

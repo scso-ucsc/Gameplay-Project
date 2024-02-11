@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     //Game Manager Variable
-    public static GameManager instance {get; private set;} //Static enables it to be called anywhere
+    public static GameManager instance; //Static enables it to be called anywhere
+    private static int ammoCount;
 
     // Awake is called upon creation, before everything else 
     void Awake(){
@@ -14,5 +15,17 @@ public class GameManager : MonoBehaviour
         } else{
             Destroy(this); //Else, destroy it and keep original instance
         }
+    }
+
+    void Start(){
+        ammoCount = 5;
+    }
+
+    public int getAmmoCount(){
+        return ammoCount;
+    }
+
+    public void subtractAmmo(){
+        ammoCount -= 1;
     }
 }

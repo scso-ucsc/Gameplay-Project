@@ -65,6 +65,7 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2023.2.4f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/OnOffBarrier.cs" />
     <Compile Include="Assets/GameManager.cs" />
     <Compile Include="Assets/Scripts/PerlinNoise.cs" />
     <Compile Include="Assets/Managers/DoorManager.cs" />

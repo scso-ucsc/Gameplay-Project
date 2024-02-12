@@ -388,6 +388,7 @@
 "Assets/Managers/PlayerManager.cs"
 "Assets/Scripts/Button.cs"
 "Assets/Scripts/Fireball.cs"
+"Assets/Scripts/OnOffBarrier.cs"
 "Assets/Scripts/PerlinNoise.cs"
 "Assets/Scripts/PlayerAmmoSource.cs"
 -langversion:9.0

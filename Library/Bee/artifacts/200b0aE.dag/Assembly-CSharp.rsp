@@ -383,7 +383,13 @@
 -analyzer:"/Applications/Unity/Hub/Editor/2023.2.4f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2023.2.4f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/GameManager.cs"
+"Assets/Managers/AmmoManager.cs"
+"Assets/Managers/DoorManager.cs"
 "Assets/Managers/PlayerManager.cs"
+"Assets/Scripts/Button.cs"
+"Assets/Scripts/Fireball.cs"
+"Assets/Scripts/PerlinNoise.cs"
+"Assets/Scripts/PlayerAmmoSource.cs"
 -langversion:9.0
 
 /deterministic

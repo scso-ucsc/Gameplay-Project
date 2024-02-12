@@ -40,6 +40,8 @@ public class PlayerManager : MonoBehaviour
         if(Input.GetKeyDown("space") && GameManager.instance.getAmmoCount() > 0){ //Fire Fireball if SPACE is pressed
             AmmoManager.instance.Fire();
             GameManager.instance.subtractAmmo();
+        } else if(Input.GetKeyDown("space") && GameManager.instance.getAmmoCount() == 0){ //If ammoCount == 0
+            GameManager.instance.gameOver();
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; //Static enables it to be called anywhere
     private static int ammoCount;
     private static int playerScore;
+    private static string gameDifficulty = "Easy";
 
     // Awake is called upon creation, before everything else 
     void Awake(){
@@ -41,5 +43,21 @@ public class GameManager : MonoBehaviour
 
     public void addScore(int addScoreValue){
         playerScore += addScoreValue;
+    }
+
+    public void gameOver(){
+        SceneManager.LoadScene("MainMenuScene"); //Change!!!
+    }
+
+    public void switchToHard(){
+        gameDifficulty = "Hard";
+    }
+
+    public void switchToEasy(){
+        gameDifficulty = "Easy";
+    }
+
+    public string getDifficulty(){
+        return gameDifficulty;
     }
 }

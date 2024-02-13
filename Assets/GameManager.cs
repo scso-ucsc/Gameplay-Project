@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private static int ammoCount;
     private static int playerScore;
     private static string gameDifficulty = "Easy";
+    private static bool gameIsPaused = false;
 
     // Awake is called upon creation, before everything else 
     void Awake(){
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     void Start(){
         ammoCount = 5;
         playerScore = 0;
+        gameIsPaused = false;
     }
 
     public int getAmmoCount(){
@@ -59,5 +61,31 @@ public class GameManager : MonoBehaviour
 
     public string getDifficulty(){
         return gameDifficulty;
+    }
+
+    // public void PauseGame(){
+    //     Time.timeScale = 0f; //Stopping in game clock; Essentially stopping all updates
+    //     Debug.Log("Game Paused");
+    //     gameIsPaused = true;
+    // }
+
+    // public void ResumeGame(){
+    //     Time.timeScale = 1f; //Reactivating game clock
+    //     gameIsPaused = false;
+    // }
+
+    // public void ExitToMenu(){
+    //     Time.timeScale = 1f; //Reactivating game clock
+    //     SceneManager.LoadScene("MainMenuScene");
+    //     gameIsPaused = false;
+    // }
+
+    public bool isPaused(){
+        return gameIsPaused;
+    }
+
+    public void ExitToMenu(){
+        Time.timeScale = 1f; //Reactivating game clock
+        SceneManager.LoadScene("MainMenuScene");
     }
 }

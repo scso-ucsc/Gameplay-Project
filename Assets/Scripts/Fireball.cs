@@ -31,7 +31,6 @@ public class Fireball : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             this.gameObject.SetActive(false);
             GameManager.instance.addAmmo(5);
-            Debug.Log(GameManager.instance.getAmmoCount());
         }
     }
 }

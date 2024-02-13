@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerScoreText;
     [SerializeField] private TextMeshProUGUI playerAmmoText;
     [SerializeField] private Canvas playerScope;
+    [SerializeField] private GameObject pausedMenuUI;
 
     void Awake(){
         if(instance == null){
@@ -26,6 +27,8 @@ public class UIManager : MonoBehaviour
         } else{
             playerScope.enabled = false;
         }
+
+        pausedMenuUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,5 +36,19 @@ public class UIManager : MonoBehaviour
     {
         playerAmmoText.text = "Ammo: " + GameManager.instance.getAmmoCount().ToString(); //Updating ammo constantly
         playerScoreText.text = "Score: " + GameManager.instance.getPlayerScore().ToString(); //Updating score constantly
+        
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            PauseGame();
+        }
+    }
+
+    public void PauseGame(){
+        pausedMenuUI.SetActive(true);
+        Time.timeScale = 0f; //Stopping in game clock; Essentially stopping all updates
+    }
+
+    public void ReturnToGame(){
+        pausedMenuUI.SetActive(false);
+        Time.timeScale = 1f; //Reactivating game clock
     }
 }

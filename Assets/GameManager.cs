@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private static int playerScore;
     private static string gameDifficulty = "Easy";
     private static bool gameIsPaused = false;
+    private static bool playerWin = false;
 
     // Awake is called upon creation, before everything else 
     void Awake(){
@@ -47,8 +48,15 @@ public class GameManager : MonoBehaviour
         playerScore += addScoreValue;
     }
 
+    public void switchToWin(){
+        playerWin = true;
+    }
+
+    public bool getPlayerWin(){
+        return playerWin;
+    }
     public void gameOver(){
-        SceneManager.LoadScene("MainMenuScene"); //Change!!!
+        SceneManager.LoadScene("GameOverScene");
     }
 
     public void switchToHard(){
@@ -63,23 +71,6 @@ public class GameManager : MonoBehaviour
         return gameDifficulty;
     }
 
-    // public void PauseGame(){
-    //     Time.timeScale = 0f; //Stopping in game clock; Essentially stopping all updates
-    //     Debug.Log("Game Paused");
-    //     gameIsPaused = true;
-    // }
-
-    // public void ResumeGame(){
-    //     Time.timeScale = 1f; //Reactivating game clock
-    //     gameIsPaused = false;
-    // }
-
-    // public void ExitToMenu(){
-    //     Time.timeScale = 1f; //Reactivating game clock
-    //     SceneManager.LoadScene("MainMenuScene");
-    //     gameIsPaused = false;
-    // }
-
     public bool isPaused(){
         return gameIsPaused;
     }
@@ -87,5 +78,10 @@ public class GameManager : MonoBehaviour
     public void ExitToMenu(){
         Time.timeScale = 1f; //Reactivating game clock
         SceneManager.LoadScene("MainMenuScene");
+    }
+
+    public void RestartGame(){
+        playerWin = false;
+        SceneManager.LoadScene("PlayScene");
     }
 }

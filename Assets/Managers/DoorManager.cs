@@ -60,5 +60,9 @@ public class DoorManager : MonoBehaviour
                 GameObject extraAmmo = Instantiate(playerAmmoSourcePrefab, spawnpoint4.position, Quaternion.Euler(0, 0, 0), ammoParent);
             }
         }
+        if(GameManager.instance.getPlayerScore() >= 850){
+            GameManager.instance.switchToWin();
+            GameManager.instance.gameOver();
+        }
     }
 }

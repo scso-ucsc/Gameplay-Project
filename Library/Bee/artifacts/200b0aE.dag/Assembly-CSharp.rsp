@@ -385,6 +385,7 @@
 "Assets/GameManager.cs"
 "Assets/Managers/AmmoManager.cs"
 "Assets/Managers/DoorManager.cs"
+"Assets/Managers/GameOverManager.cs"
 "Assets/Managers/MainMenuManager.cs"
 "Assets/Managers/PlayerManager.cs"
 "Assets/Managers/UIManager.cs"

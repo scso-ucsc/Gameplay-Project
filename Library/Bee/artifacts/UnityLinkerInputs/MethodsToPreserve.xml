@@ -1,0 +1,21 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="GameManager">
+			<method name="ExitToMenu"/>
+			<method name="ExitToMenu"/>
+			<method name="RestartGame"/>
+			<method name="switchToEasy"/>
+			<method name="switchToHard"/>
+		</type>
+		<type fullname="MainMenuManager">
+			<method name="OpenCredits"/>
+			<method name="OpenOptions"/>
+			<method name="ReturnToMainMenu"/>
+			<method name="ReturnToMainMenu"/>
+			<method name="StartGame"/>
+		</type>
+		<type fullname="UIManager">
+			<method name="ReturnToGame"/>
+		</type>
+	</assembly>
+</linker>

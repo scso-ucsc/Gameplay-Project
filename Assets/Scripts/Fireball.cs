@@ -17,7 +17,7 @@ public class Fireball : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collider){
-        if(collider.gameObject.tag == "Wall"){ //If fireball collides with a wall, disable the fireball
+        if(collider.gameObject.tag == "Wall" || collider.gameObject.tag == "Enemy"){ //If fireball collides with a wall or an enemy, disable the fireball
             this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; //Resetting velocity to 0 so that if active again, that force no longer applies
             this.gameObject.SetActive(false);
         } else if(collider.gameObject.tag == "Coin"){
